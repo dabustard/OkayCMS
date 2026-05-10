@@ -1,0 +1,11 @@
+{
+  "Okay": "4.3.0",
+  "version": "1.0.0",
+  "moduleName": "Variant Feed Toggle",
+  "description": "Adds Feed switch for product variants in backend",
+  "author": "Codex",
+  "vendor": {
+    "email": "support@example.com",
+    "site": "https://example.com"
+  }
+}
