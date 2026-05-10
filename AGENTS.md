@@ -21,7 +21,7 @@ description: >
 
 **Прежде чем писать хоть строчку кода**, проанализируй ТЗ и задай **только те вопросы, ответы на которые не очевидны из описания** — одним сообщением.
 
-Имя вендора и модуля уточняй если не указано (формат: `Vendor/ModuleName`). **Если вендор не указан — используй `Claude` по умолчанию.**
+Имя вендора и модуля уточняй если не указано (формат: `Vendor/ModuleName`). **Если вендор не указан — используй `Codex` по умолчанию.**
 
 Используй таблицу как чеклист: если ответ на вопрос уже ясен из ТЗ — не задавай его. Спрашивай только то, что реально неизвестно:
 
@@ -68,22 +68,27 @@ Okay/Modules/Vendor/ModuleName/
 
 ## Шаг 3 — Справочные материалы
 
-### Читай перед написанием кода
+### Правила загрузки (читай строго по условию — не всё сразу!)
 
-- **Полный API AbstractInit + EntityField** → `references/api.md` ← **читать всегда!**
-- **Все Entities/Helpers/Requests + типичные точки расширения** → `references/extension-points.md` ← **читать при написании экстендеров!**
-- **Архитектура и паттерны** → `references/dev-chat.md`
-- **Официальная документация** → `references/docs.md`
-- **Паттерн импорта/экспорта CSV** → `references/import-export.md` ← читать если нужен CSV импорт/экспорт
-- **Паттерны Entity, ExtendsEntities, именование таблиц** → `references/entity-patterns.md` ← читать при создании Entity
-
-### Примеры модулей — выбирай по задаче:
-
-| Задача | Пример |
+| Условие | Читать |
 |---|---|
+| **Всегда** — любой модуль | `references/api.md` — полный API AbstractInit + EntityField |
+| Нужна архитектура модулей, init, extenders, module.json, table_migrate | `references/docs-modules.md` |
+| Нужен экстендер (Chain/Queue), точки расширения хелперов/реквестов | `references/extension-points.md` |
+| Создаётся Entity, работа с БД, хелперы, реквесты | `references/docs-entities.md` + `references/entity-patterns.md` |
+| Smarty-плагины, CSS/JS, роуты, TPL-модификации | `references/docs-frontend.md` |
+| CSV импорт/экспорт | `references/import-export.md` |
+| Глубокие вопросы о ядре: DI-контейнер, Response, планировщик | `references/docs-core.md` |
+
+### Примеры — читай TL;DR в начале файла, потом решай нужен ли полный код
+
+| Задача | Файл примера |
+|---|---|
+| Простое доп. поле к товару (минимальный модуль) | `references/examples/AdditionalDescriptionField.md` |
+| Своя таблица + CRUD + изображения | `references/examples/ProductsAdvantages.md` |
 | CRUD с фронтом + роутами (официальный) | `references/examples/FAQ.md` |
 | Smarty-плагин + Helper + роуты | `references/examples/FastOrder.md` |
-| Импорт/экспорт CSV + своя сущность + XML-фид | `references/examples/Rozetka.md` |
+| Импорт/экспорт CSV + XML-фид (сложный) | `references/examples/Rozetka.md` |
 
 ---
 
