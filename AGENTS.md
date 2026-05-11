@@ -312,6 +312,9 @@ Okay/log/app-YYYY-MM-DD.log
 6. **Угадывание имён классов** — всегда сверяй с `extension-points.md` или спрашивай пользователя
 7. **`IMPORT_EXPORT_FIELD` ≠ `FIELD_NAME`** — `BackendExportHelper` строит CSV как `$product->{columnKey}`, поэтому ключ колонки **обязан совпадать с реальным именем поля** в БД. Используй `const IMPORT_EXPORT_FIELD = self::FIELD_NAME;`
 8. **Отсутствие `data-label` в `import_fields_association.tpl`** — JS ядра читает этот атрибут чтобы обновить видимый текст в select после выбора пользователя. Без него select визуально не обновляется (хотя импорт работает). Всегда добавляй `data-label` к каждому `<option>`
+9. **Использование несуществующих методов `EntityField`** (например, `setDefaultValue`) — перед миграцией полей сверяй имена методов с `references/api.md`. Для дефолта используй `setDefault(...)`.
+10. **Динамический доступ к полям в backend Smarty** (`$obj->{Class::CONST}`) — может блокироваться security policy компилятора. В backend-шаблонах используй прямой доступ `$obj->field_name` или заранее присвоенные безопасные переменные.
+11. **Chain-экстендер возвращает не тот тип/`null`** — в расширениях `postVariants`/`postProduct` всегда возвращай корректный результат того же типа, что пришёл в метод (обычно массив/объект), иначе можно сломать фронтовые контроллеры и мета-хелперы.
 
 ---
 
@@ -324,10 +327,12 @@ Okay/log/app-YYYY-MM-DD.log
 - [ ] ChainExtenders возвращают результат (`return $data`)
 - [ ] QueueExtenders НЕ возвращают результат
 - [ ] Все поля зарегистрированы через `registerEntityField()` (если использовал `migrateEntityField`)
+- [ ] Для `EntityField` использованы реальные методы API (например, `setDefault`, а не несуществующие аналоги)
 - [ ] Языковые файлы ru/en/ua созданы в `Backend/lang/` (НЕ в `Backend/design/lang/`!)
 - [ ] Языковые файлы фронта в `design/lang/` (если нужны)
 - [ ] `module.json` содержит корректные TPL-модификации (если нужны)
 - [ ] `services.php` содержит все кастомные классы (Extension, Helper, Plugin...)
+- [ ] Backend Smarty-шаблоны не используют запрещённый dynamic member access (например, `$obj->{Class::CONST}`)
 - [ ] `SmartyPlugins.php` заполнен (если используются Smarty-плагины)
 - [ ] Entity: `$langTable` и `$langObject` заполнены если есть `$langFields`
 - [ ] `$table` в Entity начинается с `__` (рекомендуется для новых модулей)
