@@ -27,6 +27,7 @@ class Init extends AbstractInit
             (new EntityField('content'))->setTypeText()->setIsLang(),
             (new EntityField('background_type'))->setTypeVarchar(20)->setDefault('color'),
             (new EntityField('background_color'))->setTypeVarchar(7)->setDefault('#ffffff'),
+            (new EntityField('text_color'))->setTypeVarchar(7)->setDefault('#000000'),
             (new EntityField('background_gradient'))->setTypeVarchar(500)->setNullable(),
             (new EntityField('gradient_color_from'))->setTypeVarchar(7)->setNullable(),
             (new EntityField('gradient_color_to'))->setTypeVarchar(7)->setNullable(),
@@ -61,6 +62,7 @@ class Init extends AbstractInit
                 <path d="M7.50781 4.27539C7.92193 4.2755 8.25781 4.61124 8.25781 5.02539C8.25781 5.43953 7.92193 5.77528 7.50781 5.77539H7C6.58579 5.77539 6.25001 5.4396 6.25 5.02539C6.25 4.61118 6.58579 4.27539 7 4.27539H7.50781ZM13.4209 4.25C13.8351 4.25 14.1709 4.58579 14.1709 5C14.1709 5.41421 13.8351 5.75 13.4209 5.75H9.71582C9.30161 5.75 8.96582 5.41421 8.96582 5C8.96582 4.58579 9.30161 4.25 9.71582 4.25H13.4209Z" fill="currentColor"/>
             </svg>'
         );
+
 
         $this->extendUpdateObject(
             'sviat__header_notice_bar',
