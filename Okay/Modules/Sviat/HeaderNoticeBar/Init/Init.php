@@ -70,4 +70,10 @@ class Init extends AbstractInit
             HeaderNoticeBarEntity::class
         );
     }
+
+
+    public function update_1_0_3()
+    {
+        $this->migrateEntityField('sviat__header_notice_bar', (new EntityField('text_color'))->setTypeVarchar(7)->setDefault('#000000'));
+    }
 }
