@@ -28,6 +28,9 @@ class HeaderNoticeBarRequest
         
         $backgroundColor = $this->sanitizeCssValue(trim((string)$this->request->post('background_color')));
         $banner->background_color = $backgroundColor !== '' ? $backgroundColor : '#ffffff';
+
+        $textColor = $this->sanitizeCssValue(trim((string)$this->request->post('text_color')));
+        $banner->text_color = $textColor !== '' ? $textColor : '#000000';
         
         $customGradient = $this->request->post('background_gradient');
         $customGradient = $customGradient !== null && $customGradient !== '' ? $this->sanitizeCssValue(trim((string)$customGradient)) : null;
