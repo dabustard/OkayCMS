@@ -2,7 +2,7 @@
     <div class="header_notice_bar_carousel{if $header_notice_banners|@count <= 1} header_notice_bar_carousel_ready{/if}" data-display-mode="{$header_notice_bar_display_mode|escape}" data-interval-minutes="{$header_notice_bar_interval_minutes|escape}">
         {foreach $header_notice_banners as $banner name="hnb"}
             <div class="header_notice_bar header_notice_bar_carousel__slide{if $smarty.foreach.hnb.iteration == $header_notice_bar_initial_index + 1} header_notice_bar_carousel__slide_active{/if}"
-                style="{if $banner->background_type == 'gradient' && $banner->background_gradient}background: {$banner->background_gradient|escape};{elseif $banner->background_type == 'gradient' && $banner->gradient_color_from && $banner->gradient_color_to}background: linear-gradient(90deg, {$banner->gradient_color_from|escape}, {$banner->gradient_color_to|escape});{elseif $banner->background_color}background-color: {$banner->background_color|escape};{/if}">
+                style="{if $banner->background_type == 'gradient' && $banner->background_gradient}background: {$banner->background_gradient|escape};{elseif $banner->background_type == 'gradient' && $banner->gradient_color_from && $banner->gradient_color_to}background: linear-gradient(90deg, {$banner->gradient_color_from|escape}, {$banner->gradient_color_to|escape});{elseif $banner->background_color}background-color: {$banner->background_color|escape};{/if}{if $banner->text_color}color: {$banner->text_color|escape};{/if}">
                 <div class="header_notice_bar__content">
                     {$banner->content nofilter}
                 </div>
@@ -35,9 +35,11 @@
             return i >= 0 && i < count ? i : 0;
         }
 
+
         function initCarousel() {
             var carousel = document.querySelector('.header_notice_bar_carousel');
             if (!carousel) return;
+
 
             var allCookies = document.cookie || '';
             var match = allCookies.match(new RegExp('(?:^|;\\s*)' + COOKIE_NAME + '=([^;]*)'));
