@@ -61,6 +61,8 @@
 
             updateTickers(carousel);
             window.addEventListener('resize', function () { updateTickers(carousel); });
+            window.addEventListener('load', function () { updateTickers(carousel); });
+            setTimeout(function () { updateTickers(carousel); }, 150);
 
             var allCookies = document.cookie || '';
             var match = allCookies.match(new RegExp('(?:^|;\\s*)' + COOKIE_NAME + '=([^;]*)'));
