@@ -14,7 +14,7 @@
 .header_notice_bar_carousel__slide {
     grid-area: 1 / 1;
     width: 100%;
-    padding: 8px 0;
+    padding: 2px 0;
     text-align: center;
     position: relative;
     opacity: 0;
@@ -47,6 +47,21 @@
 .header_notice_bar__text {
     display: inline-block;
     min-width: 100%;
+}
+
+
+.header_notice_bar__text,
+.header_notice_bar__text * {
+    white-space: nowrap !important;
+}
+
+.header_notice_bar__text p {
+    display: inline;
+    margin: 0;
+}
+
+.header_notice_bar__text br {
+    display: none;
 }
 
 .header_notice_bar__content.header_notice_bar__content_ticker .header_notice_bar__text {
