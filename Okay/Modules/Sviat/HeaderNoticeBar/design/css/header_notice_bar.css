@@ -39,6 +39,32 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.header_notice_bar__text {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.header_notice_bar__content.header_notice_bar__content_ticker .header_notice_bar__text {
+    min-width: auto;
+    padding-left: 100%;
+    animation-name: headerNoticeBarTicker;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes headerNoticeBarTicker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .header_notice_bar__content p {
