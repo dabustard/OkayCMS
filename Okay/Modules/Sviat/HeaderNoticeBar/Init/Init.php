@@ -74,6 +74,6 @@ class Init extends AbstractInit
 
     public function update_1_0_3()
     {
-        $this->migrateEntityField('sviat__header_notice_bar', (new EntityField('text_color'))->setTypeVarchar(7)->setDefault('#000000'));
+        $this->migrateEntityField(HeaderNoticeBarEntity::class, (new EntityField('text_color'))->setTypeVarchar(7)->setDefault('#000000'));
     }
 }
