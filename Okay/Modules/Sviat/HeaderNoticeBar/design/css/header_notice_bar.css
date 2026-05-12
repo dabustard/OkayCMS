@@ -14,7 +14,7 @@
 .header_notice_bar_carousel__slide {
     grid-area: 1 / 1;
     width: 100%;
-    padding: 8px 0;
+    padding: 2px 0;
     text-align: center;
     position: relative;
     opacity: 0;
