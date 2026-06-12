@@ -127,7 +127,11 @@ class FrontExtender implements ExtensionInterface
 
                     $total_price_for_coupon = 0;
                     foreach ($cart->purchases as $purchase) {
-                        if (in_array($purchase->product->id,$products_for_coupon_ids) && (!empty($purchase->undiscounted_price) || $purchase->variant->compare_price == $purchase->variant->price)) {
+                        if (
+                            in_array($purchase->product->id, $products_for_coupon_ids)
+                            && !$this->variantHasExternalId($purchase)
+                            && (!empty($purchase->undiscounted_price) || $purchase->variant->compare_price == $purchase->variant->price)
+                        ) {
                             $total_price_for_coupon += $purchase->undiscounted_price * $purchase->amount;
                             $purchase->discountID=1;
                         }
@@ -187,6 +191,16 @@ class FrontExtender implements ExtensionInterface
             }
 
 //        }
+    }
+
+
+    private function variantHasExternalId($purchase)
+    {
+        if (empty($purchase->variant) || !isset($purchase->variant->external_id)) {
+            return false;
+        }
+
+        return trim((string)$purchase->variant->external_id) !== '';
     }
 
     private function couponCodeExists()
