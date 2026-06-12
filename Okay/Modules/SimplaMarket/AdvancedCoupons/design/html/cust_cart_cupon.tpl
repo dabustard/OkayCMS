@@ -1,0 +1,1 @@
+<div class="{if empty($coupon_error)}message_success {else} hidden-xl-up{/if}" >

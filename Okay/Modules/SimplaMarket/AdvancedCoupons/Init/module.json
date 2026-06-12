@@ -1,0 +1,71 @@
+{
+  "Okay": "4.2.1",
+  "version": "1.0.4",
+  "moduleName": "Продвинутые купоны",
+  "vendor": {
+    "email": "my@simplamarket.com",
+    "site": "https://simplamarket.com"
+  },
+  "modifications": {
+    "front": [
+      {
+        "file": "cart_coupon.tpl",
+        "changes": [
+          {
+            "find": "<div class=\"message_success\">",
+            "replace": "cust_cart_cupon.tpl"
+          },
+          {
+            "find": "                {if $coupon_error == 'invalid'}\n                    {$lang->cart_coupon_error}\n                {elseif $coupon_error == 'empty'}\n                    {$lang->cart_empty_coupon_error}\n                {/if}",
+            "replace": "coupon_error.tpl"
+          },
+          {
+            "find": "{$lang->cart_coupon} {$cart->coupon->code|escape} {$lang->cart_coupon_min} {$cart->coupon->min_order_price|convert} {$currency->sign|escape}",
+            "replace": "{$lang->cart_coupon} {$cart->coupon->code|escape} {$lang->sm_advanced_coupons_discount_coupon_success}"
+          }
+        ]
+      },
+      {
+        "file": "cart_coupon.tpl",
+        "changes": [
+          {
+            "find": "{$discount->percentDiscount|string_format:\"%.2f\"} %",
+            "replace": "cust_cart_cupon_percent.tpl"
+          }
+        ]
+      },
+      {
+        "file": "cart.tpl",
+        "changes": [
+          {
+            "find": "{$cart->total_price|convert} {$currency->sign|escape}",
+            "replace": "cust_cart.tpl"
+          }
+        ]
+      },
+      {
+        "file": "cart_purchases.tpl",
+        "changes": [
+          {
+            "find": "purchase__price_total",
+            "appendAfter": "cust_cart_purchases.tpl"
+          }
+        ]
+      },
+      {
+        "file": "cart_purchases.tpl",
+        "changes": [
+          {
+            "find": "<div class=\"fn_purchases_wrap\" data-total_purchases_price=\"{$cart->total_price}\">",
+            "replace": "<div class=\"fn_purchases_wrap\" data-total_purchases_price=\"{$cart->undiscounted_total_price}\">"
+          }
+        ]
+      }
+    ]
+  },
+  "name": "",
+  "description": "",
+  "minimumCoreVersion": "",
+  "title": "",
+  "author": ""
+}

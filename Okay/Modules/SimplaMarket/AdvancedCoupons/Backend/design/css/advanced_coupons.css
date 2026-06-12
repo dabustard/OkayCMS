@@ -1,0 +1,9 @@
+.okay_list .okay_list_advanced_coupon_name {
+    width: calc(100% - 895px);
+    position: relative;
+    text-align: left;
+}
+.okay_list .okay_list_advanced_coupon_summ {
+    width: 110px;
+    text-align: center;
+}

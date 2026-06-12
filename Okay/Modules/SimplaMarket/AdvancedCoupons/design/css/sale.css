@@ -1,0 +1,58 @@
+.discounts_days_block {
+    margin-top: 10px;
+    height: 35px;
+}
+.discounts_days {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    margin-right: 5px;
+}
+.discounts_days:after {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 10%;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    transition: border 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
+    width: 20px;
+}
+.discounts_days::after {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 10%;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    left: inherit;
+    position: relative;
+    transition: border 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+    float: left;
+}
+input[type=checkbox]:checked + .discounts_days:after{
+    content: '\f00c';
+    font-family: "FontAwesome";
+    color: rgb(43, 48, 59);
+}
+.sale_timer {
+    margin-bottom: 15px;
+}
+.product .details_boxed__prices p {
+    color: red;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+.discount_approve.purchase_detail__price {
+    margin-left: 5px;
+}

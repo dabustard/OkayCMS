@@ -1,0 +1,33 @@
+<?php
+
+$lang['coupons_no'] = 'No';
+$lang['coupon_for_categories'] = 'Coupon Categories';
+$lang['coupon_for_products'] = 'Coupon Products';
+$lang['coupon_added'] = 'Coupon added';
+$lang['coupon_info'] = 'Coupon Options';
+$lang['coupon_updated'] = 'Coupon updated';
+$lang['coupons_coupon'] = 'Coupon';
+$lang['coupons_new'] = 'New coupon';
+$lang['coupons_add'] = 'Add Coupon';
+$lang['coupons_nothing'] = 'No coupons';
+$lang['left_advanced_coupons_title'] = 'Advanced Coupons';
+$lang['coupons_feature'] = 'Property';
+$lang['coupons_feature_value'] = 'Property value';
+$lang['coupons_summ'] = 'Summarize with User Discount';
+$lang['advanced_coupons_feature_all'] = 'Everyone';
+$lang['advanced_coupons_feature_value_all'] = 'Everyone';
+$lang['advanced_coupons_description'] = 'Advanced code';
+$lang['advanced_coupons_description'] = 'Advanced coupons';
+$lang['sm_advanced_coupons_discount_coupon_name'] = 'Coupon';
+$lang['sm_advanced_coupons_discount_coupon_description'] = 'Coupon from module Advanced Coupons';
+$lang['sm_advanced_coupons_discount_dont_forget'] = 'Dont forget add $<sm_advanced_coupons in Settings->Discounts';
+$lang['sm_advanced_coupons_discount_instruction'] = 'Advanced coupons work like regular coupons only with additional functionality. The most important thing is to fill in the coupon parameters. Then you can choose what the coupon will be applied to, it can be separate products or categories. It is possible to choose both options. You can also create a purchase for a specific property and its value.';
+$lang['docs1'] = 'Settings-> Discounts you can specify your own rules. Documentation ';
+$lang['docs2'] = 'Using the example from the documentation, we can make our coupon count along with other coupons.';
+$lang['docs3'] = '$ <ok_coup $ <ok_gr $ <sm_advanced_coupons';
+$lang['docs4'] = 'Broken down into stages:';
+$lang['docs5'] = '1) $ <ok_coup - coupon discount';
+$lang['docs6'] = '2) $ <ok_gr - user group discount';
+$lang['docs7'] = '3) $ <sm_advanced_coupons - advanced user group discount';
+$lang['docs8'] = '"<" - means that there is a discount from the starting price';
+$lang['docs9'] = '$ sm_advanced_coupons - will mean a discount from the last discount (discount from the price after discounts - the rest)';

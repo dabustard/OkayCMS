@@ -1,0 +1,33 @@
+<?php
+
+$lang['coupons_no'] = 'Нет';
+$lang['coupon_for_categories'] = 'Категории купона';
+$lang['coupon_for_products'] = 'Товары купона';
+$lang['coupon_added'] = 'Купон добавлен';
+$lang['coupon_info'] = 'Параметры купона';
+$lang['coupon_updated'] = 'Купон обновлен';
+$lang['coupons_coupon'] = 'Купон';
+$lang['coupons_new'] = 'Новый купон';
+$lang['coupons_add'] = 'Добавление купона';
+$lang['coupons_nothing'] = 'Нет купонов';
+$lang['left_advanced_coupons_title'] = 'Продвинутые купоны';
+$lang['coupons_feature'] = 'Свойство';
+$lang['coupons_feature_value'] = 'Значение свойства';
+$lang['coupons_summ'] = 'Суммировать со скидкой пользователя';
+$lang['advanced_coupons_feature_all'] = 'Все';
+$lang['advanced_coupons_feature_value_all'] = 'Все';
+$lang['advanced_coupons_description'] = 'Продвинутий купон';
+$lang['sm_advanced_coupons_discount_coupon_name'] = 'Купон';
+$lang['sm_advanced_coupons_discount_coupon_description'] = 'Купон из модуля Продвинутые купоны';
+$lang['sm_advanced_coupons_discount_dont_forget'] = 'Не забудьте добавить купон $<sm_advanced_coupons в Настройки->Скидки';
+$lang['sm_advanced_coupons_discount_instruction'] = 'Продвинутые купоны работают как обычные только с дополнительными функционалами. Самое главное заполнить параметры купона. После Вы можете выбирать к чему будет применяться купон, это могут быть отдельные товары или категории. Есть возможность выбрать оба варианта. Так же купон можно создать на определённое свойство и его значение.';
+$lang['docs1'] = ' Настройки сайта->Скидки вы можете указывать свои правила. Документация ';
+$lang['docs2'] = ' Воспользуемся примером из документация мы можем сделать что бы наш купон считался вместе с другими купонами.';
+$lang['docs3'] = ' $<ok_coup $<ok_gr $<sm_advanced_coupons';
+$lang['docs4'] = ' Если разбить на этапы:';
+$lang['docs5'] = ' 1) $<ok_coup - скидка купона';
+$lang['docs6'] = ' 2) $<ok_gr - скидка групы пользователя';
+$lang['docs7'] = ' 3) $<sm_advanced_coupons  - скидка групы продвинутых купонов пользователя';
+$lang['docs8'] = ' "<" - означает что скидка от начальной цены';
+$lang['docs9'] = ' $sm_advanced_coupons - будет означать скидка от последней скидки(скидка от цены после скидок - остатка)';
+$lang['docs10'] = 'Если использовать набор $sm_advanced_coupons отдельно от $<ok_coup $<ok_gr приоритет будет у первого ';

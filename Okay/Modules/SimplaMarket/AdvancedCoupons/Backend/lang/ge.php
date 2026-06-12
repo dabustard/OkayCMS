@@ -1,0 +1,22 @@
+<?php
+$lang['coupons_no'] = 'Nein';
+$lang['coupon_for_categories'] = 'Gutscheinkategorien';
+$lang['coupon_for_products'] = 'Gutscheinprodukte';
+$lang['coupon_added'] = 'Gutschein hinzugefügt';
+$lang['coupon_info'] = 'Gutscheinoptionen';
+$lang['coupon_updated'] = 'Gutschein aktualisiert';
+$lang['coupons_coupon'] = 'Gutschein';
+$lang['coupons_new'] = 'Neuer Gutschein';
+$lang['coupons_add'] = 'Gutschein hinzufügen';
+$lang['coupons_nothing'] = 'Keine Coupons';
+$lang['left_advanced_coupons_title'] = 'Erweiterte Coupons';
+$lang['coupons_feature'] = 'Eigenschaft';
+$lang['coupons_feature_value'] = 'Eigenschaftswert';
+$lang['coupons_summ'] = 'Zusammenfassen mit Benutzerrabatt';
+$lang['advanced_coupons_feature_all'] = 'Jeder';
+$lang['advanced_coupons_feature_value_all'] = 'Alle';
+$lang['advanced_coupons_description'] = 'Erweiterter Code';
+$lang['advanced_coupons_description'] = 'Advanced coupons';
+$lang['sm_advanced_coupons_discount_coupon_name'] = 'Coupon';
+$lang['sm_advanced_coupons_discount_coupon_description'] = 'Coupon from module Advanced Coupons';
+$lang['sm_advanced_coupons_discount_instruction'] = 'Erweiterte Coupons funktionieren wie normale Coupons nur mit zusätzlichen Funktionen. Das Wichtigste ist, die Coupon-Parameter auszufüllen. Dann können Sie auswählen, auf was der Gutschein angewendet wird, es können einzelne Produkte oder Kategorien sein. Es ist möglich, beide Optionen zu wählen. Sie können auch einen Kauf für eine bestimmte Immobilie und deren Wert erstellen.';
