@@ -3,7 +3,6 @@
 namespace Okay\Modules\Codex\RelatedProductsByFeatures;
 
 use Okay\Core\Database;
-use Okay\Core\Design;
 use Okay\Core\OkayContainer\Reference\ServiceReference as SR;
 use Okay\Core\QueryFactory;
 use Okay\Core\Request;
@@ -16,7 +15,6 @@ return [
         'class' => BackendExtender::class,
         'arguments' => [
             new SR(Request::class),
-            new SR(Design::class),
         ],
     ],
     RelatedProductsCalculator::class => [

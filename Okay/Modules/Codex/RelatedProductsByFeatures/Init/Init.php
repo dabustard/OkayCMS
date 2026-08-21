@@ -2,7 +2,6 @@
 
 namespace Okay\Modules\Codex\RelatedProductsByFeatures\Init;
 
-use Okay\Admin\Controllers\FeatureAdmin;
 use Okay\Admin\Requests\BackendFeaturesRequest;
 use Okay\Core\Modules\AbstractInit;
 use Okay\Core\Modules\EntityField;
@@ -37,10 +36,6 @@ class Init extends AbstractInit
 
         $this->registerEntityField(FeaturesEntity::class, self::FEATURE_WEIGHT_FIELD);
 
-        $this->registerQueueExtension(
-            ['class' => FeatureAdmin::class, 'method' => 'fetch'],
-            ['class' => BackendExtender::class, 'method' => 'assignFeatureWeight']
-        );
         $this->registerChainExtension(
             [BackendFeaturesRequest::class, 'postFeature'],
             [BackendExtender::class, 'extendPostFeature']

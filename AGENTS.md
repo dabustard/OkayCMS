@@ -7,6 +7,7 @@ description: >
   экстендерах, сущностях и шаблонах OkayCMS. Скилл содержит официальную документацию, примеры готовых
   модулей и инсайты из чата разработчиков.
 ---
+Always respond, write implementation plans, and write commit messages in Russian.
 
 # Скилл: Разработка модулей OkayCMS
 
