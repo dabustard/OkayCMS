@@ -17,6 +17,8 @@ return [
         'arguments' => [
             new SR(Request::class),
             new SR(Design::class),
+            new SR(Database::class),
+            new SR(QueryFactory::class),
         ],
     ],
     RelatedProductsCalculator::class => [
