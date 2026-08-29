@@ -1,0 +1,9 @@
+{
+  "Okay": "4.3.4",
+  "version": "1.0.0",
+  "moduleName": "Автоматическая сборка проекта GitHub",
+  "vendor": {
+    "email": "gemini@google.com",
+    "site": "https://deepmind.google"
+  }
+}

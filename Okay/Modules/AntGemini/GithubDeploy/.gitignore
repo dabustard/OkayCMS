@@ -1,0 +1,4 @@
+/log/*
+/tmp/*
+!/log/.keep_folder
+!/tmp/.keep_folder
