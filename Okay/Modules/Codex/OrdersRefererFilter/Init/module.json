@@ -1,0 +1,27 @@
+{
+  "Okay": "4.3.0",
+  "version": "1.0.0",
+  "moduleName": "Orders Referer Filter",
+  "description": "Фильтрация заказов по источникам (рефералам) в панели управления",
+  "vendor": {
+    "name": "Codex"
+  },
+  "modifications": {
+    "backend": [
+      {
+        "file": "orders.tpl",
+        "changes": [
+          {
+            "find": "class=\"search\"",
+            "closestFind": "col-",
+            "appendBefore": "orders_referer_filter.tpl"
+          },
+          {
+            "find": "name=\"controller\"",
+            "appendAfter": "{if $referer_channel}<input type=\"hidden\" name=\"referer_channel\" value=\"{$referer_channel|escape}\">{/if}"
+          }
+        ]
+      }
+    ]
+  }
+}
