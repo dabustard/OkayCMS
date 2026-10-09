@@ -6,5 +6,6 @@
         <option value="{url referer_channel='email' page=null}" {if $referer_channel == 'email'}selected{/if}>{$btr->orders_referer_channel_email|escape}</option>
         <option value="{url referer_channel='referral' page=null}" {if $referer_channel == 'referral'}selected{/if}>{$btr->orders_referer_channel_referral|escape}</option>
         <option value="{url referer_channel='unknown' page=null}" {if $referer_channel == 'unknown'}selected{/if}>{$btr->orders_referer_channel_unknown|escape}</option>
+        <option value="{url referer_channel='none' page=null}" {if $referer_channel == 'none'}selected{/if}>{$btr->orders_referer_channel_none|escape}</option>
     </select>
 </div>
