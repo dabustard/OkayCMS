@@ -153,6 +153,18 @@ public function extendSomething($data)
 }
 ```
 
+### Классы экстендеров обязаны реализовывать ExtensionInterface
+
+Все классы экстендеров (Chain и Queue) обязаны реализовывать интерфейс `Okay\Core\Modules\Extender\ExtensionInterface`, иначе валидатор ядра выбросит исключение при регистрации:
+```php
+use Okay\Core\Modules\Extender\ExtensionInterface;
+
+class MyExtension implements ExtensionInterface
+{
+    // ...
+}
+```
+
 ### services.php — регистрация через DI
 
 ```php
@@ -316,6 +328,7 @@ Okay/log/app-YYYY-MM-DD.log
 9. **Использование несуществующих методов `EntityField`** (например, `setDefaultValue`) — перед миграцией полей сверяй имена методов с `references/api.md`. Для дефолта используй `setDefault(...)`.
 10. **Динамический доступ к полям в backend Smarty** (`$obj->{Class::CONST}`) — может блокироваться security policy компилятора. В backend-шаблонах используй прямой доступ `$obj->field_name` или заранее присвоенные безопасные переменные.
 11. **Chain-экстендер возвращает не тот тип/`null`** — в расширениях `postVariants`/`postProduct` всегда возвращай корректный результат того же типа, что пришёл в метод (обычно массив/объект), иначе можно сломать фронтовые контроллеры и мета-хелперы.
+12. **Класс экстендера не реализует `ExtensionInterface`** — ядро проверяет `is_subclass_of($classExtender, ExtensionInterface::class)` и выбрасывает фатальную ошибку при вызове `registerChainExtension` / `registerQueueExtension`. Всегда добавляй `implements ExtensionInterface`.
 
 ---
 
@@ -325,6 +338,7 @@ Okay/log/app-YYYY-MM-DD.log
 - [ ] Namespace соответствует пути
 - [ ] `install()` содержит только одноразовые операции
 - [ ] `init()` содержит всё что нужно при каждом запуске
+- [ ] Все классы экстендеров реализуют `ExtensionInterface` (`implements ExtensionInterface`)
 - [ ] ChainExtenders возвращают результат (`return $data`)
 - [ ] QueueExtenders НЕ возвращают результат
 - [ ] Все поля зарегистрированы через `registerEntityField()` (если использовал `migrateEntityField`)

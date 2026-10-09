@@ -3,9 +3,10 @@
 namespace Okay\Modules\Codex\OrdersRefererFilter\Extensions;
 
 use Okay\Core\Design;
+use Okay\Core\Modules\Extender\ExtensionInterface;
 use Okay\Core\Request;
 
-class BackendOrdersHelperExtension
+class BackendOrdersHelperExtension implements ExtensionInterface
 {
     /** @var Request */
     private $request;
